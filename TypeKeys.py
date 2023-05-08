@@ -19,10 +19,7 @@ win32api.UnhookWindowsHookEx(hook) """
 
 myKeyboard = Controller()
 
-
 while True:
-
-
     # start spamming at key press
     # print(win32gui.GetForegroundWindow())
     if keyboard.is_pressed('q'):
@@ -54,4 +51,4 @@ while True:
                         # i = 0
                         print('focused')
                     time.sleep(2) """
-            # qqppq01234567890123456789012345678p9p
+            # 
