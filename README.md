@@ -1,62 +1,40 @@
-Keyboard Spamming Tool
-This is a Python script that allows you to spam keystrokes on your keyboard. It utilizes the pynput library to control the keyboard inputs and the keyboard library to detect key presses. The script is designed to spam a sequence of numbers (1-9) when a specific key is pressed.
+Bloons Auto Clicker
+Overview
+Bloons Auto Clicker is a Python script designed to automate the activation of Special Abilities in the game Bloons TD 6. This script allows you to spam a sequence of numbers (1-9) when a specific key is pressed, enhancing your gameplay by automating the activation of abilities.
 
 Prerequisites
-Before running the script, make sure you have the following prerequisites installed:
+Before running the script, ensure you have the following installed:
 
 Python 3.x
 pynput library
 keyboard library
-win32gui library
-win32api library
-win32con library
-
+pywin32 package (includes win32gui, win32api, win32con)
 You can install the required libraries using pip:
+
+bash
+Copy code
 pip install pynput keyboard pywin32
+How to Use
+Download the Script:
 
-Usage
-Import the necessary libraries:
+Save the bloons-auto-clicker.py file to your local machine.
 
-from pynput.keyboard import Controller
-import time
-import keyboard
-import win32gui
-import win32api
-import win32con
+Run the Script:
 
-Create an instance of the Controller class from pynput.keyboard:
+Open a terminal or command prompt, navigate to the directory containing the script, and run:
 
-myKeyboard = Controller()
-Run an infinite loop to continuously check for key presses:
+bash
+Copy code
+python bloons-auto-clicker.py
+In-Game Usage:
 
-    while True:
+Start Spamming Abilities:
 
-Inside the loop, check if the specified key (in this case, 'q') is pressed using the keyboard.is_pressed() function:
+Press the q key to start spamming the numbers 1-9, which will activate the corresponding Special Abilities in Bloons TD 6.
+You should see a message "Powering up" indicating the script is active.
+Stop Spamming Abilities:
 
-    if keyboard.is_pressed('q'):
-
-If the key is pressed, start spamming the numbers 1-9:
-
-        print('Powering up')
-        i = 0
-        while i != 10:
-            if not i == 20:
-                time.sleep(.1)
-                keyboard.press(str(i))
-                keyboard.release(str(i))
-            if not (i ^ 9):
-                i = 0
-            else:
-                i = i + 1
-            if keyboard.is_pressed('p'):
-                print('Powering down')
-                i = 10
-
-Stop the script by pressing the 'p' key.
-
+Press the p key to stop the spamming.
+You should see a message "Powering down" indicating the script has stopped.
 Note
-There is a commented out section of code that is meant for handling window focus. This code is currently disabled in the script. If you want to enable it and customize it to your needs, you can uncomment the relevant code block and modify it accordingly.
-
-That's it! You can now run the script and spam keystrokes when the 'q' key is pressed. Make sure to review and modify the script according to your requirements before running it.
-
-Disclaimer: Be mindful when using this script and ensure that you have appropriate permissions to interact with applications or systems. Misuse of this script may violate terms of service or applicable laws. Use it responsibly.
+There is a commented-out section of code intended for handling window focus. This code is currently disabled in the script. If you want to enable it and customize it to your needs, you can uncomment the relevant code block and modify it accordingly.
